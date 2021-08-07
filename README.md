@@ -8,3 +8,8 @@ Further we get to hear that the input to a transaction is the hash of the on-cha
 Since release on mainnet is approaching fast, this need to be resolved and information given to everyone that wants to write Cardano smart contracts.
 
 And then we have the "wallet". This is said to run the off-chain code, and generate the transaction. But how can this be a common use case in real life? The wallet we use to today is Daedalus and Yoroi. They will never be able to run the off-chain part of my "smart-contract". My "off-chain" part needs to be "hosted" somewhere else. Do we expect that the wallet we use will be able to retrieve this off-chain code and execute it? It this case we need a bridge between the wallet and the repository containing my off-chain code. And of-course, there will be no transaction generated without access to my private key...which is kept safely within the wallet.  Something I don't understand here.
+
+The "PAB" (Plutus Application Backend" has been briefly mention a few times. What will this do?
+Further, I've herd (by Lars B) that currently the PAB needs to communicate to the blockchain using a Cardano Node.
+ need more information on this.
+ 
