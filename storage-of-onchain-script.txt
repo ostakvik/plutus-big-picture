@@ -1,0 +1,36 @@
+
+
+I always believed (based on the tutorials in PPP) that the on-chain code (SC) is not contained in executable format in an eUTXO, only the hash of that script.
+If this was to be correct, it means that the validating node must have some place to lookup the SC code, using the SC hash as key.
+Question: where is this SC code repository?
+There has been some mentionings that there will be a "SC app store". Is this ment to be for on-chain sc code?
+
+Today (3rd january 2022) there is still little information about this "SC store". So little that it can not exist.
+and SC are running on main-net. This means that my understanding above  (that sc code is not within  the Tx (eutxo) itself ) must be wrong.
+This question is raised on cardano.stackexchange.com > https://cardano.stackexchange.com/questions/3830/where-is-the-on-chain-code-actually-stored 
+That link (that answer) says that the sc code itself (in a binary form) is contained within the transaction (eutxo). This allows that the validating node is able to run that sc code during validation (the given sliot that contains this eutxo).
+
+When a transaction is assembled by the PAB (?) the off-chain code (the service portal) is supplying the given sc code in binary form to the PAB.
+The PAB is then sending this transaction ("data + sc code) to the blockchain. Instead of sending it to a given wallet adress (as in a simple transaction) it it sent to an address that is the hash of that given SC code.
+This means that the amount of ADA is locked at this address. The only way to spend this UTXO is to assemble a new transaction that contains the sc code (which hash matches the address of the UTXO to spend). Is this new "spending transaction" succeeds when running the sc code (the validating script), the ADA at the locked hash-address is sent to whateber adress the new spending transaction specifies. Most likely the contained script will have the destination adress given as parameter(s).
+
+
+This is a very good explanation:
+https://cardano.stackexchange.com/questions/3751/why-does-the-plutus-script-need-be-provided-in-the-transaction
+
+However, at the end, it raises a new question regarding how to validate old transactions (the sc code must reside somewhere on the chain for this purpose.
+ Some excerpt from this thread:
+--
+The script is part of the transaction and adds to the block size (it is also counted when evaluating the max transaction size). As a transaction needs to contain all the information needed for nodes to validate it, it must include all scripts in an executable format (hence not as hash). There is no way around it. The only thing the blockchain can do, is decide where to attach the scripts, and having them attached to the transaction instead of the individual output UTxO seems to be the smarter way
+--
+
+Another one trying to answer the question "what does it mean that "Utxo sits at a script address?": https://cardano.stackexchange.com/questions/2537/what-does-it-mean-that-a-utxo-sits-at-script-address?rq=1
+
+The whole answer is pherhaps within this article. THIS is a MUST READ:
+
+And read this one: https://docs.cardano.org/plutus/Plutus-transactions
+
+
+
+
+
