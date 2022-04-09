@@ -1,1 +1,2 @@
 https://hydra.family/head-protocol/
+https://plutus-apps.readthedocs.io/en/latest/plutus/explanations/pab.html#browser-wallet-in-progress
