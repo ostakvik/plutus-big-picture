@@ -1,2 +1,8 @@
 https://hydra.family/head-protocol/
+
+Link to a set of Plutus docs:
 https://plutus-apps.readthedocs.io/en/latest/plutus/explanations/pab.html#browser-wallet-in-progress
+
+An example of how a Dapp-portal interacts with a browser based wallet (Nami) and a PAB (constructing the transaction).
+Understanding this flow is essential for creating own Dapps.
+https://github.com/input-output-hk/plutus-apps/tree/main/plutus-pab-executables/demo/pab-nami
