@@ -6,6 +6,7 @@ https://plutus-apps.readthedocs.io/en/latest/plutus/explanations/pab.html#browse
 An example of how a Dapp-portal interacts with a browser based wallet (Nami) and a PAB (constructing the transaction).
 Understanding this flow is essential for creating own Dapps.
 https://github.com/input-output-hk/plutus-apps/tree/main/plutus-pab-executables/demo/pab-nami
+https://developers.cardano.org/docs/get-started/running-cardano
 
 Another Haskell tutorial portal:
 https://livebook.manning.com/book/get-programming-with-haskell/chapter-1/5
