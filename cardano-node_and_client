@@ -1,0 +1,63 @@
+#### Generate signing key and public key (to obtain wallet receive addresses):
+
+./ccli address key-gen --verification-key-file keys/payment1.vkey --signing-key-file keys/payment1.skey
+
+
+## Create a wallet receive address using the the ".vkey":
+# Keep in min that the cardano-cli is also contains a small set of wallet functionality):
+./ccli address build --payment-verification-key-file keys/payment1.vkey --out-file keys/payment1.addr --testnet-magic 1097911063
+./ccli address build --payment-verification-key-file keys/payment2.vkey --out-file keys/payment2.addr --testnet-magic 1097911063
+
+
+### query the blockchain for transactions using the generated wallet receive adress:
+./ccli query utxo --testnet-magic 1097911063 --address $(cat keys/payment1.addr) 
+
+
+### Query the cardano node's current sync status:
+./cardano-cli query tip --testnet-magic 1097911063
+
+
+###NOTE   : Use "--mainnet" instead of the  "--testnet-magic 1097911063" if you are hitting the main blockchain ###
+
+
+### Require some test ADA :###
+Goto this url: https://developers.cardano.org/docs/integrate-cardano/testnet-faucet/ 
+
+and paste in the above generated wallet receive address.
+You get his confirmation:
+------
+Success
+Your transaction has been successful and 1000 Ada have been sent to addr_test1vqa0g5hkgxxlpxaxcjlcll7xf606gg7fnza7nl6xzg5s0yqag40u6.
+
+Please verify the following transaction hash:
+
+41461790b6cb6f617d1bf6971bfd367726881f90fb1a5c9b3ab48657392addb9
+(note: this transactionId has 2 outputs: 1 to my wallet and one to the senders wallet. Still, it it this txId I must use to 
+-------
+The transaction hash above can be pasted in as a search address in this url:https://explorer.cardano-testnet.iohkdev.io/en/transaction?id=41461790b6cb6f617d1bf6971bfd367726881f90fb1a5c9b3ab48657392addb9
+and you get something similar like this in return:
+
+--------------------
+Transaction
+Received Time
+> a few seconds ago (2022-04-11 09:31:44 UTC)
+Included In
+Epoch 198, Block 3466010
+Confirmations
+1
+Transaction ID
+41461790b6cb6f617d1bf6971bfd367726881f90fb1a5c9b3ab48657392addb9
+From addresses
+addr_test1qp0vw2...dyya47gz2qnvdq7z
+99241505.94453 ADA
+To addresses
+addr_test1vqa0g5...l6xzg5s0yqag40u6
+1000 ADA
+addr_test1qqrcjz...dyya47gz2qzvqtp8
+99240505.776741 ADA
+Total Output
+99241505.776741 ADA
+Transaction Fee
+0.167789 ADA
+--------------------------
+

@@ -12,9 +12,12 @@ https://developers.cardano.org/docs/get-started/running-cardano
 
 
 ## hot to read the last entries on the chains:##
-## Nive to see the status and compare with how far the sync your local cardano-node has come.... ##
+## Nice to see the status and compare with how far the sync your local cardano-node has come.... ##
 https://explorer.cardano-testnet.iohkdev.io/en/browse-epochs
 
+
+### The page that tells you how to create keys, and create receive addresses, transactions, sign them and submit them to the chain. ###
+## Sending transactions requires that your local cardano-code is synched with the blockchain (otherwise, there is no UTXO to spend...): ###
 
 
 Another Haskell tutorial portal:
