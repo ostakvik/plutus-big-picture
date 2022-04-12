@@ -19,6 +19,8 @@ https://explorer.cardano-testnet.iohkdev.io/en/browse-epochs
 ### The page that tells you how to create keys, and create receive addresses, transactions, sign them and submit them to the chain. ###
 ## Sending transactions requires that your local cardano-code is synched with the blockchain (otherwise, there is no UTXO to spend...): ###
 
+https://developers.cardano.org/docs/stake-pool-course/handbook/create-simple-transaction/
+
 
 Another Haskell tutorial portal:
 https://livebook.manning.com/book/get-programming-with-haskell/chapter-1/5
