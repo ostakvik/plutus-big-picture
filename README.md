@@ -5,11 +5,13 @@ However, based on the discord questions, ama's ++, it seems to be lack of inform
 The Pioneer  program uses the Plutus Playground to run the code. This webapplication emulates both the wallet (the off-chain code) and the 'on-chain validating' script to be executed on the validating Cardano Node. The source file in every example (?) contains both on-chain code and the off-code. In real life (according to my understanding) this will not be the case.
 
 
-WHen a transaction contains a smart contract script, the complete script (Source code) must be contained within the transaction.
+When a transaction contains a smart contract script, the complete script (Source code) must be contained within the transaction.
 It must be the source code. It can not be the compiled code. If this was the case there whould be a new hash of this code every time the Haskell compiler was upgraded and produced a more efficient code, or if the Plutus library beneath has changed implementation of some method. Keep in mind that a smart contract stored on chain must be "valid" in all times to come (100 years+).
 Even though nobody is using it anymore, this specific transaction with this plutus script MUST validate 15 years from now.
 How is this backward compatibility preserved?
-Regarding the size of the script on how much space this cuurently requires within the transaction is to be solved by using script referencing ( https://cips.cardano.org/cips/cip33/).This allows that the transaction only keeps a reference to the script and that the complete script is stored somewhere else.
+
+Regarding the size of the script on how much space this cuurently requires within the transaction is to be solved by using script referencing ( https://cips.cardano.org/cips/cip33/). 
+This allows that the transaction only keeps a reference to the script and that the complete script is stored somewhere else.
 
 
 And then we have the "wallet". 
@@ -22,6 +24,8 @@ The "PAB" (Plutus Application Backend" has been briefly mention a few times. Wha
 The PAB is still (april 2022) a bit vague. As far as I understand, the PAB is not a specific application, but instead a set of functionality that provides all the stuff that a Dapp needs to do.
 AFAIK, one of the most important services PAB provides is to assemble the transaction that is to use a script. It must put the script code into the transaction and then send it to the BC. (??? verify). Does the PAB framework provides an API that enables a simple integration with applications?
 Need more read-up on this....
+
+A drawing that attempts to give an architectual overview:
  
  ![architecture_pab_wallet_cardano-node](https://user-images.githubusercontent.com/49366319/163684405-74d5830c-fec5-4089-b081-4c3c0273c759.png)
 
