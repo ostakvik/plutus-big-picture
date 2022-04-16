@@ -1,4 +1,4 @@
-# plutus-big-picture. Some thoughts after Plutus Pioneer Program cohort2, Session #4
+# plutus-big-picture. 
 Attempts to explain what the big picture looks like. PAB's , on-chain code, off-chain code, on-chain code repos etc.
 The first lesson in Plutus piioneer program explains the EUTXO modell used in Cardano blockchain. The understanding of this is crucial for any further work.
 However, based on the discord questions, ama's ++, it seems to be lack of information of what the Plutus landscape looks like.
