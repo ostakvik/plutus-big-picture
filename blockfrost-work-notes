@@ -1,0 +1,40 @@
+addr_test1vqa0g5hkgxxlpxaxcjlcll7xf606gg7fnza7nl6xzg5s0yqag40u6
+
+
+>>>>> See the content of an address:
+
+curl -H "project_id: $BF_PROJECT_ID" "https://cardano-testnet.blockfrost.io/api/v0/addresses/addr_test1vqa0g5hkgxxlpxaxcjlcll7xf606gg7fnza7nl6xzg5s0yqag40u6"
+
+{
+	"address": "addr_test1vqa0g5hkgxxlpxaxcjlcll7xf606gg7fnza7nl6xzg5s0yqag40u6",
+	"amount": [{
+		"unit": "lovelace",
+		"quantity": "924825567"
+	}],
+	"stake_address": null,
+	"type": "shelley",
+	"script": false
+}
+
+>>>> See the transactions on an address:
+
+addr_test1vrkqqc8y4jx99026tkc6r6amph2uxy9duj4lxzrpaxjltwsdjncvh
+curl -H "project_id: $BF_PROJECT_ID" "https://cardano-testnet.blockfrost.io/api/v0/addresses/addr_test1vqa0g5hkgxxlpxaxcjlcll7xf606gg7fnza7nl6xzg5s0yqag40u6/transactions?count=2&order=desc"
+
+[{
+	"tx_hash": "38ec5a24d669ace28c550f5a2ff66b78b3d9aeb0d30470e2cb0b97b2dd73e795",
+	"tx_index": 5,
+	"block_height": 3473600,
+	"block_time": 1649927640
+}, {
+	"tx_hash": "41461790b6cb6f617d1bf6971bfd367726881f90fb1a5c9b3ab48657392addb9",
+	"tx_index": 2,
+	"block_height": 3466010,
+	"block_time": 1649669504
+}]
+
+
+######
+It is possible to query addresses which made at least 1 transaction on the blockchain and belong to a given stake address.
+
+###
