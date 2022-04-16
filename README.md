@@ -19,3 +19,8 @@ The "PAB" (Plutus Application Backend" has been briefly mention a few times. Wha
 The PAB is still (april 2022) a bit vague. As far as I understand, the PAB is not a specific application, but instead a set of functionality that provides all the stuff the PAB needs to do (?).
 AFAIK, one of the most important services PAB provides is to assemble the transaction that is to use a script. It must put the script code into the transaction and then send it to the BC. (??? verify).
  
+ ![architecture_pab_wallet_Cardano-node](https://user-images.githubusercontent.com/49366319/163684135-85bc9c80-936e-4205-be45-f97e3f0bd57f.png)
+
+
+ 
+ 
