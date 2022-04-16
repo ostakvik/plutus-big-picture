@@ -1,0 +1,10 @@
+Cardano - The PAB & Wallet demo - experiences.
+================================================
+
+This is a walk through of this tutorial : https://github.com/input-output-hk/plutus-apps/tree/main/plutus-pab-executables/demo/pab-nami
+
+This is a drawing that makes an attempt(!) to give the 1000-meters PoV.
+
+<insert drawing here>
+
+
