@@ -35,6 +35,6 @@ Need more read-up on this....
 
 A drawing that attempts to give an architectual overview:
  
- ![architecture_pab_wallet_cardano-node](https://user-images.githubusercontent.com/49366319/163684405-74d5830c-fec5-4089-b081-4c3c0273c759.png)
+![architecture_application_pab_wallet_cardano-node](https://user-images.githubusercontent.com/49366319/163685649-473cd60b-7c92-4c4d-9afa-462ccd48660a.png)
 
  
