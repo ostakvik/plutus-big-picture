@@ -7,10 +7,18 @@ The Pioneer  program uses the Plutus Playground to run the code. This webapplica
 
 When a transaction contains a smart contract script, the complete script (Source code) must be contained within the transaction.
 It must be the source code. It can not be the compiled code. If this was the case there whould be a new hash of this code every time the Haskell compiler was upgraded and produced a more efficient code, or if the Plutus library beneath has changed implementation of some method. Keep in mind that a smart contract stored on chain must be "valid" in all times to come (100 years+).
-Even though nobody is using it anymore, this specific transaction with this plutus script MUST validate 15 years from now.
-How is this backward compatibility preserved?
+Reasons is that whenever a cardano  node is to be synched, all existing (historic) transactions must be validated. If some of these transactions contains a script, that script must be executed (TRUE or FALSE to see that the output generated is correct). 
+There are 2 challenges related to this:
+1) The script (source code) within the transaction is to be compiled (?) at the validating node. If this is a long time after the script was created, the Plutus library might have been changed (most likely and hopefully, it has). 
+This means that the all new plutus versions must be backward compatible with the Plutus version(api) that was used at the time of smart contract introduction and all versions there after.
 
-Regarding the size of the script on how much space this cuurently requires within the transaction is to be solved by using script referencing ( https://cips.cardano.org/cips/cip33/). 
+2) Let's dry-run the case where the script was added into the transaction as compiled Plutus code. Lets assume a use-case where the script is to lock a given amount of ADA for future redeeming. The given amount of ada is locked at an address equal to the hash of the script. Lets simplify this to be HASH-1. 5 Years later when the amount is to be redeemed a new transaction containing this script must be created. The Script (same old source code) is compiled off-chain (in the "Dapp portal) and the compiled version is included within the transaction. Now, lets also assume that the Plutus library has been changed during these 5 years. The compiled output is no longer the same as the original one 5 years ago. Meaning that the hash of this script is different, lets say HASH-2. There exist no address similar to HASH-2 and hence no ADA to redeem. The script will fail to validate.
+
+NOTE: Add the link to a verification that plutus on-chain scripts are stored within a transaction as source code.
+
+Regarding script stored as source code:How is this backward compatibility preserved?
+
+Regarding the size of the script on how much space this currently requires within the transaction is to be solved by using script referencing ( https://cips.cardano.org/cips/cip33/). 
 This allows that the transaction only keeps a reference to the script and that the complete script is stored somewhere else.
 
 
