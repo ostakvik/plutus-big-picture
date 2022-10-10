@@ -19,7 +19,8 @@ NOTE: Add the link to a verification that plutus on-chain scripts are stored wit
 Regarding script stored as source code:How is this backward compatibility preserved?
 
 Regarding the size of the script on how much space this currently requires within the transaction is to be solved by using script referencing ( https://cips.cardano.org/cips/cip33/). 
-This allows that the transaction only keeps a reference to the script and that the complete script is stored somewhere else.
+This allows that the transaction only keeps a reference to the script and that the complete script is stored within a transactions already stored on the blockchain.
+This will be highly beneficial since a service will make 1000's of transactions using the same script.
 
 
 And then we have the "wallet". 
